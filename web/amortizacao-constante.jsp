@@ -31,7 +31,7 @@
             
             <% try {
                 
-                double amortizacao = 0, totalAmortizado = 0, totalJuros = 0, totalPrestacao = 0;
+                double amortizacao = 0, totalAmortizado = 0, totalJuros = 0, totalPrestacao = 0, valorParcela = 0;
                 double valorDivida = Double.parseDouble(request.getParameter("valorDivida"));
                 double qtdParcelas = Double.parseDouble(request.getParameter("qtdParcelas"));
                 double juros = Double.parseDouble(request.getParameter("taxaJuros"));
@@ -60,9 +60,9 @@
                            <tr>
                                
                 <td><%=i%></td>
-                <%qtdParcelas = amortizacao + (valorDivida * taxa);%>
-                <td><%=formatador.format(qtdParcelas)%></td>
-                <%totalPrestacao = qtdParcelas + totalPrestacao;
+                <%valorParcela = amortizacao + (valorDivida * taxa);%>
+                <td><%=formatador.format(valorParcela)%></td>
+                <%totalPrestacao = valorParcela + totalPrestacao;
                     juros = valorDivida * taxa;
                     totalJuros = juros + totalJuros;
                     totalAmortizado = amortizacao + totalAmortizado;%>
