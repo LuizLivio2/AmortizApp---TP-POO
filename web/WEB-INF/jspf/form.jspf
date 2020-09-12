@@ -1,0 +1,12 @@
+            <form>
+                <div style="width:200px; margin:auto; text-align: center">
+                    <label>Valor da Dívida</label><br>
+                    <input type="number" name="valorDivida" class="form-control"><br>
+                    <label>Quantidade de Parcelas</label><br>
+                    <input type="number" name="qtdParcelas" class="form-control"><br>
+                    <label>Taxa de Juros (%)</label><br>
+                    <input type="number" name="taxaJuros" class="form-control"><br>
+                    <input type="submit" value="Calcular!" class="btn btn-primary">
+                    <br>
+                </div>
+            </form>
