@@ -65,8 +65,10 @@
                             <td>-</td>
                         </tr>
                     </table> 
-                <%} 
-            } catch (Exception ex){;
+                <%} else{
+                        out.println("Valor inválido ou não informado!");
+                    }
+            } catch(Exception ex) {;
             }%>
         </div>
         <%@include file="WEB-INF/jspf/bootstrap-scripts.jspf" %>
