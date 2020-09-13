@@ -35,40 +35,36 @@
                             <th>Valor da Amortização</th>
                             <th>Saldo Devedor Total</th>
                         </tr>
-                        <%for(int i = 0; i <= qtdParcelas + 2; i++){ 
-                            if(i == 0){%>
-                                <tr>
-                                    <td>0</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td><%=valorDivida%></td>
-                                </tr>
-                            <%} else if(i < qtdParcelas + 1){
-                                    valorJuros = taxa*valorDivida;
-                                    valorAmort = valorParcela - valorJuros;
-                                    valorDivida -= valorAmort;
-                                    acumParcela += valorParcela;
-                                    acumJuros += valorJuros;
-                                    acumAmort += valorAmort;%>
-                                        <tr>
-                                            <td><%=i%></td>
-                                            <td><%=(double)(Math.round(valorParcela*100))/100%></td>
-                                            <td><%=(double)(Math.round(valorJuros*100))/100%></td>
-                                            <td><%=(double)(Math.round(valorAmort*100))/100%></td>
-                                            <td><%=(double)(Math.round(valorDivida*100))/100%></td>
-                                        </tr>
-                            <%} else if(i == qtdParcelas + 2){%>
-                            <tr style="font-weight: bold" >
-                                <td>Total</td>
-                                <td><%=(double)(Math.round(acumParcela*100))/100%></td>
-                                <td><%=(double)(Math.round(acumJuros*100))/100%></td>
-                                <td><%=(double)(Math.round(acumAmort*100))/100%></td>
-                                <td>-</td>
+                        <tr>
+                            <td>0</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td><%=valorDivida%></td>
+                        </tr>
+                        <%for (int i = 1; i <= qtdParcelas && valorDivida > 0; i++) { 
+                            valorJuros = taxa*valorDivida;
+                            valorAmort = valorParcela - valorJuros;
+                            valorDivida -= valorAmort;
+                            acumParcela += valorParcela;
+                            acumJuros += valorJuros;
+                            acumAmort += valorAmort;%>
+                            <tr>
+                                <td><%=i%></td>
+                                <td><%=(double)(Math.round(valorParcela*100))/100%></td>
+                                <td><%=(double)(Math.round(valorJuros*100))/100%></td>
+                                <td><%=(double)(Math.round(valorAmort*100))/100%></td>
+                                <td><%=(double)(Math.round(valorDivida*100))/100%></td>
                             </tr>
-                            <%}
-                        }%>
-                    </table>
+                        <%}%>
+                        <tr style="font-weight: bold" >
+                            <td>Total</td>
+                            <td><%=(double)(Math.round(acumParcela*100))/100%></td>
+                            <td><%=(double)(Math.round(acumJuros*100))/100%></td>
+                            <td><%=(double)(Math.round(acumAmort*100))/100%></td>
+                            <td>-</td>
+                        </tr>
+                    </table> 
                 <%} 
             } catch (Exception ex){;
             }%>
