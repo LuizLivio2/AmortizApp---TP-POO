@@ -51,17 +51,17 @@
                             acumAmort += valorAmort;%>
                             <tr>
                                 <td><%=i%></td>
-                                <td><%=(double)(Math.round(valorParcela*100))/100%></td>
-                                <td><%=(double)(Math.round(valorJuros*100))/100%></td>
-                                <td><%=(double)(Math.round(valorAmort*100))/100%></td>
-                                <td><%=(double)(Math.round(valorDivida*100))/100%></td>
+                                <td><%=formatador.format(valorParcela)%></td>
+                                <td><%=formatador.format(valorJuros)%></td>
+                                <td><%=formatador.format(valorAmort)%></td>
+                                <td><%=formatador.format(valorDivida)%></td>
                             </tr>
                         <%}%>
                         <tr style="font-weight: bold" >
                             <td>Total</td>
-                            <td><%=(double)(Math.round(acumParcela*100))/100%></td>
-                            <td><%=(double)(Math.round(acumJuros*100))/100%></td>
-                            <td><%=(double)(Math.round(acumAmort*100))/100%></td>
+                            <td><%=formatador.format(acumParcela)%></td>
+                            <td><%=formatador.format(acumJuros)%></td>
+                            <td><%=formatador.format(acumAmort)%></td>
                             <td>-</td>
                         </tr>
                     </table> 
