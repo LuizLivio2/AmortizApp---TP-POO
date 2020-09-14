@@ -6,7 +6,7 @@
                     <input type="number" name="qtdParcelas" class="form-control"><br>
                     <label>Taxa de Juros (%)</label><br>
                     <input type="number" name="taxaJuros" class="form-control"><br>
-                    <input type="submit" value="Calcular!" class="btn btn-primary">
+                    <input type="submit" value="Calcular" class="btn btn-primary">
                     <br>
                 </div>
             </form>

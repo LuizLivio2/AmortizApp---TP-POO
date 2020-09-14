@@ -31,7 +31,7 @@
                         <tr>
                             <th>Mês</th>
                             <th>Valor da Parcela</th>
-                            <th>valor dos Juros</th>
+                            <th>Valor dos Juros</th>
                             <th>Valor da Amortização</th>
                             <th>Saldo Devedor Total</th>
                         </tr>
