@@ -40,7 +40,7 @@
                             <td>-</td>
                             <td>-</td>
                             <td>-</td>
-                            <td><%=valorDivida%></td>
+                            <td>R$ <%=valorDivida%></td>
                         </tr>
                         <%for (int i = 1; i <= qtdParcelas && valorDivida > 0; i++) { 
                             valorJuros = taxa*valorDivida;
@@ -51,17 +51,17 @@
                             acumAmort += valorAmort;%>
                             <tr>
                                 <td><%=i%></td>
-                                <td><%=formatador.format(valorParcela)%></td>
-                                <td><%=formatador.format(valorJuros)%></td>
-                                <td><%=formatador.format(valorAmort)%></td>
-                                <td><%=formatador.format(valorDivida)%></td>
+                                <td>R$ <%=formatador.format(valorParcela)%></td>
+                                <td>R$ <%=formatador.format(valorJuros)%></td>
+                                <td>R$ <%=formatador.format(valorAmort)%></td>
+                                <td>R$ <%=formatador.format(valorDivida)%></td>
                             </tr>
                         <%}%>
                         <tr style="font-weight: bold" >
                             <td>Total</td>
-                            <td><%=formatador.format(acumParcela)%></td>
-                            <td><%=formatador.format(acumJuros)%></td>
-                            <td><%=formatador.format(acumAmort)%></td>
+                            <td>R$ <%=formatador.format(acumParcela)%></td>
+                            <td>R$ <%=formatador.format(acumJuros)%></td>
+                            <td>R$ <%=formatador.format(acumAmort)%></td>
                             <td>-</td>
                         </tr>
                     </table> 
