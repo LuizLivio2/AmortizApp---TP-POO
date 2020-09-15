@@ -40,28 +40,28 @@
                             <td>-</td>
                             <td>-</td>
                             <td>-</td>
-                            <td><%=formatador.format(valorDivida)%></td>
+                            <td>R$ <%=formatador.format(valorDivida)%></td>
                         </tr>   
                         <%for (int i = 1; i <= qtdParcelas && valorDivida > 0; i++) {%>
                             <tr>     
                                 <td><%=i%></td>
                                 <%valorParcela = amortizacao + (valorDivida * taxa);%>
-                                <td><%=formatador.format(valorParcela)%></td>
+                                <td>R$ <%=formatador.format(valorParcela)%></td>
                                 <%totalPrestacao = valorParcela + totalPrestacao;
                                 juros = valorDivida * taxa;
                                 totalJuros = juros + totalJuros;
                                 totalAmortizado = amortizacao + totalAmortizado;%>
-                                <td><%=formatador.format(juros)%></td>
-                                <td><%=formatador.format(amortizacao)%></td>
+                                <td>R$ <%=formatador.format(juros)%></td>
+                                <td>R$ <%=formatador.format(amortizacao)%></td>
                                 <%valorDivida = valorDivida - amortizacao;%>
-                                <td><%=formatador.format(valorDivida)%></td>              
+                                <td>R$ <%=formatador.format(valorDivida)%></td>              
                             </tr>
                         <%}%>
                         <tr style="font-weight: bold">               
                             <td> Total </td>
-                            <td><%=formatador.format(totalPrestacao)%></td>
-                            <td><%=formatador.format(totalJuros)%></td>
-                            <td><%=formatador.format(totalAmortizado)%></td>
+                            <td>R$ <%=formatador.format(totalPrestacao)%></td>
+                            <td>R$ <%=formatador.format(totalJuros)%></td>
+                            <td>R$ <%=formatador.format(totalAmortizado)%></td>
                             <td>  -  </td>
                         </tr>
                     </table>
